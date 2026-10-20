@@ -66,7 +66,7 @@ func TestParallelMCPPresetRuntime(t *testing.T) {
 	}
 	original := *preset
 	t.Cleanup(func() { _, _ = pg.SaveMCP(&original) })
-	a, err := pg.CreateAgent(fmt.Sprintf("parallel-test-%d", time.Now().UnixNano()), "Parallel fixture", "Local MCP runtime test")
+	a, err := pg.CreateAgent(fmt.Sprintf("parallel_test_%d", time.Now().UnixNano()), "Parallel fixture", "Local MCP runtime test")
 	if err != nil || a == nil {
 		t.Fatalf("fixture agent: %v", err)
 	}
